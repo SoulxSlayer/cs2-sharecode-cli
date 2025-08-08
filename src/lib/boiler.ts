@@ -33,15 +33,27 @@ function getBoilerExecutablePath(): string {
   const platform = os.platform();
   const arch = os.arch();
   
-  // Try to find boiler-writter in node_modules
-  const nodeModulesPath = path.join(__dirname, '../../node_modules/@akiver/boiler-writter');
-  
   let executableName: string;
   if (platform === 'win32') {
     executableName = 'boiler-writter.exe';
   } else {
     executableName = 'boiler-writter';
   }
+  
+  // First, try to find boiler-writter in the dist directory (same level as compiled code)
+  const distPath = path.join(__dirname, '../', executableName);
+  if (fs.existsSync(distPath)) {
+    return distPath;
+  }
+  
+  // Try to find boiler-writter in the root directory
+  const rootPath = path.join(__dirname, '../../', executableName);
+  if (fs.existsSync(rootPath)) {
+    return rootPath;
+  }
+  
+  // Try to find boiler-writter in node_modules
+  const nodeModulesPath = path.join(__dirname, '../../node_modules/@akiver/boiler-writter');
   
   // Look for the executable in the platform-specific directory
   const platformDir = platform === 'win32' ? 'win32' : platform === 'darwin' ? 'darwin' : 'linux';
@@ -59,7 +71,11 @@ function getBoilerExecutablePath(): string {
     return fallbackPath;
   }
   
-  throw new Error(`Boiler executable not found. Expected at: ${executablePath}`);
+  throw new Error(`Boiler executable not found. Checked paths:
+  - Dist directory: ${distPath}
+  - Root directory: ${rootPath}
+  - Node modules: ${executablePath}
+  - Fallback: ${fallbackPath}`);
 }
 
 export async function startBoiler(args: string[]): Promise<CMsgGCCStrike15_v2_MatchList> {
