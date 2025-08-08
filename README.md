@@ -29,27 +29,44 @@ npm run build
 
 ## Usage
 
-### Basic usage
+### Basic usage (full match information)
 
 ```bash
 node .\dist\index.js CSGO-tqboe-XUxQS-rieDD-ynNY2-KWtrD
 ```
 
+### Get only demo URL (silent output)
+
+```bash
+node .\dist\index.js demo-url CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+```
+
+### Get full match information with explicit command
+
+```bash
+node .\dist\index.js info CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+```
+
 ### JSON output
 
 ```bash
-node .\dist\index.js CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --json
+node .\dist\index.js info CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --json
 ```
 
 ### Verbose logging
 
 ```bash
-node .\dist\index.js CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --verbose
+node .\dist\index.js info CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --verbose
 ```
 
 ## Example Output
 
-### Human-readable format:
+### Demo URL only (demo-url command):
+```
+http://replay382.valve.net/730/003767418281950970048_1750155669.dem.bz2
+```
+
+### Human-readable format (info command):
 ```
 Match ID: 3456789012345678901
 Game: cs2
@@ -60,7 +77,7 @@ File Name: match_3456789012345678901_de_mirage_2024-01-15.dem
 Share Code: CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
 ```
 
-### JSON format:
+### JSON format (info command with --json):
 ```json
 {
   "matchId": "3767413896789360699",

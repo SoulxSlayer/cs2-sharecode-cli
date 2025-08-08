@@ -42,7 +42,7 @@ export class DownloadLinkExpired extends Error {
   }
 }
 
-export async function getDownloadLinkFromShareCode(shareCode: string): Promise<DownloadResult> {
+export async function getDownloadLinkFromShareCode(shareCode: string, silent: boolean = false): Promise<DownloadResult> {
   let matchInformation: MatchInformation;
   
   try {
@@ -58,7 +58,9 @@ export async function getDownloadLinkFromShareCode(shareCode: string): Promise<D
   const matchIdAsString = matchId.toString();
   const reservationIdAsString = reservationId.toString();
 
-  console.log('Connecting to Steam to fetch match information...');
+  if (!silent) {
+    console.log('Connecting to Steam to fetch match information...');
+  }
   
   const matchListMessage = await startBoiler([
     matchIdAsString, 
@@ -73,8 +75,10 @@ export async function getDownloadLinkFromShareCode(shareCode: string): Promise<D
 
   const match = getValveMatchFromMatchInfoProtobufMessage(matches[0]);
   
-  console.log('Demo URL found:', match.demoUrl);
-  console.log('Checking if download link is still valid...');
+  if (!silent) {
+    console.log('Demo URL found:', match.demoUrl);
+    console.log('Checking if download link is still valid...');
+  }
   
   if (!match.demoUrl || match.demoUrl.trim() === '') {
     throw new DownloadLinkExpired();
