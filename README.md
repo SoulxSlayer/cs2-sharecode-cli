@@ -63,13 +63,13 @@ Share Code: CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
 ### JSON format:
 ```json
 {
-  "matchId": "3456789012345678901",
+  "matchId": "3767413896789360699",
   "game": "cs2",
-  "mapName": "de_mirage",
-  "date": "2024-01-15T14:30:00.000Z",
-  "demoUrl": "https://replay123.valve.net/730/003456789012345678901_1234567890.dem.bz2",
-  "fileName": "match_3456789012345678901_de_mirage_2024-01-15.dem",
-  "sharecode": "CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx"
+  "mapName": "de_inferno",
+  "date": "2025-08-04T20:20:05.000Z",
+  "demoUrl": "http://replay382.valve.net/730/003767418281950970048_1750155669.dem.bz2",
+  "fileName": "match730_003767418281950970048_1750155669_382",
+  "sharecode": "CSGO-tqboe-XUxQS-rieDD-ynNY2-KWtrD"
 }
 ```
 
