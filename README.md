@@ -26,32 +26,24 @@ npm install
 npm run build
 ```
 
-After build, for some weird reason lol,
-1. Go to `node_modules\@akiver\boiler-writter\dist\bin` and copy `win32-x64` and paste it in `node_modules\@akiver\boiler-writter\bin\win32` (by making it)
-2. Rename the folder to `x64`, to get `node_modules\@akiver\boiler-writter\bin\win32\x64\boiler-writter.exe`
-
-```bash
-node .\dist\index.js CSGO-tqboe-XUxQS-rieDD-ynNY2-KWtrD
-```
-
 ## Usage
 
 ### Basic usage
 
 ```bash
-cs-sharecode CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+node .\dist\index.js CSGO-tqboe-XUxQS-rieDD-ynNY2-KWtrD
 ```
 
 ### JSON output
 
 ```bash
-cs-sharecode CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --json
+node .\dist\index.js CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --json
 ```
 
 ### Verbose logging
 
 ```bash
-cs-sharecode CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --verbose
+node .\dist\index.js CSGO-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx --verbose
 ```
 
 ## Example Output
