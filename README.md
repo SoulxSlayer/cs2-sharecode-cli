@@ -28,6 +28,10 @@ Or run directly with npx:
 npx cs-sharecode-cli <sharecode>
 ```
 
+After installation, for some weird reason lol,
+1. Go to `node_modules\@akiver\boiler-writter\dist\bin` and copy `win32-x64` and paste it in `node_modules\@akiver\boiler-writter\bin\win32` (by making it)
+2. Rename the folder to `x64`, to get `node_modules\@akiver\boiler-writter\bin\win32\x64\boiler-writter.exe`
+
 ## Usage
 
 ### Basic usage
