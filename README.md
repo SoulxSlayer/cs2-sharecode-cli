@@ -19,18 +19,20 @@ A standalone CLI tool to get Counter-Strike demo download links from share codes
 ## Installation
 
 ```bash
-npm install -g cs-sharecode-cli
+npm install
 ```
-
-Or run directly with npx:
 
 ```bash
-npx cs-sharecode-cli <sharecode>
+npm run build
 ```
 
-After installation, for some weird reason lol,
+After build, for some weird reason lol,
 1. Go to `node_modules\@akiver\boiler-writter\dist\bin` and copy `win32-x64` and paste it in `node_modules\@akiver\boiler-writter\bin\win32` (by making it)
 2. Rename the folder to `x64`, to get `node_modules\@akiver\boiler-writter\bin\win32\x64\boiler-writter.exe`
+
+```bash
+node .\dist\index.js CSGO-tqboe-XUxQS-rieDD-ynNY2-KWtrD
+```
 
 ## Usage
 
