@@ -1,4 +1,4 @@
-# CS ShareCode CLI
+# CS2 ShareCode CLI
 
 A standalone CLI tool to get Counter-Strike demo download links from share codes. This tool is extracted from the [CS Demo Manager](https://github.com/akiver/cs-demo-manager) project.
 
