@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "tsc",
+    "build": "tsc && node -e \"require('fs').copyFileSync('public/boiler-writter.exe', 'dist/boiler-writter.exe')\"",
     "dev": "node --loader ts-node/esm index.ts"
   },
   "dependencies": {
